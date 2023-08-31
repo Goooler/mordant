@@ -4,7 +4,7 @@ plugins {
 }
 
 application {
-    mainClass.set("com.github.ajalt.mordant.samples.MainKt")
+    mainClass = "com.github.ajalt.mordant.samples.MainKt"
     applicationDefaultJvmArgs = listOf("-Dfile.encoding=utf-8")
 }
 

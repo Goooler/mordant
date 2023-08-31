@@ -36,28 +36,26 @@ subprojects {
 
     tasks.withType<KotlinJvmCompile>().configureEach {
         compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_1_8)
+            jvmTarget = JvmTarget.JVM_1_8
         }
     }
     tasks.withType<JavaCompile>().configureEach {
-        options.release.set(8)
+        options.release = 8
     }
 
     pluginManager.withPlugin("com.vanniktech.maven.publish") {
         apply(plugin = "org.jetbrains.dokka")
 
         tasks.named<DokkaTask>("dokkaHtml") {
-            outputDirectory.set(rootProject.rootDir.resolve("docs/api"))
-            pluginsMapConfiguration.set(
-                mapOf(
-                    "org.jetbrains.dokka.base.DokkaBase" to """{
+            outputDirectory = rootProject.rootDir.resolve("docs/api")
+            pluginsMapConfiguration = mapOf(
+                "org.jetbrains.dokka.base.DokkaBase" to """{
                         "footerMessage": "Copyright &copy; 2017 AJ Alt"
                     }"""
-                )
             )
             dokkaSourceSets.configureEach {
-                reportUndocumented.set(false)
-                skipDeprecated.set(true)
+                reportUndocumented = false
+                skipDeprecated = true
             }
         }
     }
