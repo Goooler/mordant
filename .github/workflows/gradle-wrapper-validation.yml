@@ -1,11 +1,12 @@
 name: "Validate Gradle Wrapper"
+
 on:
-  push:
-    paths:
-      - 'gradle/**'
   pull_request:
     paths:
-      - 'gradle/**'
+      - 'gradlew'
+      - 'gradlew.bat'
+      - 'gradle/wrapper/'
+
 jobs:
   validation:
     name: "Validation"
