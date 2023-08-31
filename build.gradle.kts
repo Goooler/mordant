@@ -2,9 +2,9 @@ import org.jetbrains.dokka.gradle.DokkaTask
 import java.io.ByteArrayOutputStream
 
 plugins {
-    kotlin("multiplatform").version(libs.versions.kotlin).apply(false)
-    alias(libs.plugins.dokka).apply(false)
-    alias(libs.plugins.publish).apply(false)
+    alias(libs.plugins.kotlin.multiplatform) apply false
+    alias(libs.plugins.dokka) apply false
+    alias(libs.plugins.publish) apply false
 }
 
 val VERSION_NAME: String by project
