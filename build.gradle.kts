@@ -1,6 +1,4 @@
 import org.jetbrains.dokka.gradle.DokkaTask
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 import java.io.ByteArrayOutputStream
 
 plugins {
@@ -29,18 +27,13 @@ fun getPublishVersion(): String {
     return "$VERSION_NAME.$buildNumber-SNAPSHOT"
 }
 
-
-
 subprojects {
     project.setProperty("VERSION_NAME", getPublishVersion())
 
-    tasks.withType<KotlinJvmCompile>().configureEach {
-        compilerOptions {
-            jvmTarget = JvmTarget.JVM_1_8
+    plugins.withType<JavaBasePlugin>().configureEach {
+        extensions.configure<JavaPluginExtension> {
+            toolchain.languageVersion = JavaLanguageVersion.of(8)
         }
-    }
-    tasks.withType<JavaCompile>().configureEach {
-        options.release = 8
     }
 
     pluginManager.withPlugin("com.vanniktech.maven.publish") {
