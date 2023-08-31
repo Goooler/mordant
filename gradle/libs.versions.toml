@@ -12,4 +12,4 @@ systemrules = "com.github.stefanbirkner:system-rules:1.19.0"
 
 [plugins]
 dokka = "org.jetbrains.dokka:1.8.20"
-publish = "com.vanniktech.maven.publish:0.25.2"
+publish = "com.vanniktech.maven.publish:0.25.3"
