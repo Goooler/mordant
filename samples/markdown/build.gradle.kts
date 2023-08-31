@@ -10,5 +10,5 @@ application {
 
 dependencies {
     api(kotlin("stdlib"))
-    api(project(":mordant"))
+    api(projects.mordant)
 }

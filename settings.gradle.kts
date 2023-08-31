@@ -10,3 +10,7 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
+rootProject.name = "mordant-root"
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
